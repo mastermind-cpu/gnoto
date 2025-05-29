@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flix.id - Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="player.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container player-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>Flix.id</h1>
+            </div>
+            
+            <nav class="nav-center">
+                <button class="nav-btn active" data-category="movie">Movie</button>
+                <button class="nav-btn" data-category="series">Series</button>
+                <button class="nav-btn" data-category="originals">Originals</button>
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">8</span>
+                </div>
+                <div class="profile">
+                    <img src="/placeholder.svg?height=32&width=32" alt="Sarah J" class="profile-img">
+                    <div class="profile-info">
+                        <span class="profile-name">Sarah J</span>
+                        <span class="profile-tier">Premium</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Video Player -->
+        <div class="video-player-wrapper">
+            <div class="video-player">
+                <video id="main-video" poster="/placeholder.svg?height=720&width=1280">
+                    <source src="#" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <div class="video-controls">
+                    <div class="progress-bar">
+                        <div class="progress-filled"></div>
+                    </div>
+                    
+                    <div class="controls-main">
+                        <div class="controls-left">
+                            <button class="control-btn play-pause">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn volume">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <div class="volume-slider">
+                                <input type="range" min="0" max="100" value="100">
+                            </div>
+                            <div class="time-display">
+                                <span class="current-time">00:00</span>
+                                <span>/</span>
+                                <span class="total-time">00:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="controls-right">
+                            <button class="control-btn subtitles">
+                                <i class="fas fa-closed-captioning"></i>
+                            </button>
+                            <button class="control-btn settings">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                            <button class="control-btn fullscreen">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Info -->
+        <div class="video-info">
+            <div class="video-info-header">
+                <div class="video-title-section">
+                    <h2>The Adventure of Blue Sword</h2>
+                    <div class="video-meta">
+                        <span class="video-year">2023</span>
+                        <span class="video-duration">2h 15m</span>
+                        <span class="video-rating">
+                            <i class="fas fa-star"></i>
+                            8.2
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="video-actions">
+                    <button class="action-btn">
+                        <i class="fas fa-plus"></i>
+                        Watchlist
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-share"></i>
+                        Share
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-download"></i>
+                        Download
+                    </button>
+                </div>
+            </div>
+            
+            <div class="video-description">
+                <p>A legendary warrior embarks on a perilous journey to recover the mystical Blue Sword, an ancient weapon said to possess the power to restore balance to a world on the brink of chaos. Along the way, he must confront his own demons and forge unlikely alliances to overcome the forces of darkness.</p>
+            </div>
+            
+            <div class="video-details">
+                <div class="detail-item">
+                    <span class="detail-label">Director:</span>
+                    <span class="detail-value">Zhang Wei</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Cast:</span>
+                    <span class="detail-value">Li Ming, Wang Chen, Zhao Jie</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Genre:</span>
+                    <span class="detail-value">Action, Adventure, Fantasy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Videos -->
+        <div class="related-section">
+            <h3>More Like This</h3>
+            
+            <div class="related-videos">
+                <div class="related-video">
+                    <img src="/placeholder.svg?height=180&width=320" alt="Related Video 1">
+                    <div class="related-info">
+                        <h4>The Last Samurai</h4>
+                        <span class="related-duration">1h 55m</span>
+                    </div>
+                </div>
+                
+                <div class="related-video">
+                    <img src="/placeholder.svg?height=180&width=320" alt="Related Video 2">
+                    <div class="related-info">
+                        <h4>Dragon Warrior</h4>
+                        <span class="related-duration">2h 05m</span>
+                    </div>
+                </div>
+                
+                <div class="related-video">
+                    <img src="/placeholder.svg?height=180&width=320" alt="Related Video 3">
+                    <div class="related-info">
+                        <h4>The Forbidden Kingdom</h4>
+                        <span class="related-duration">1h 45m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="player.js"></script>
+</body>
+</html>

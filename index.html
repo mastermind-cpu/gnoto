@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flix.id - Streaming Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>Flix.id</h1>
+            </div>
+            
+            <nav class="nav-center">
+                <button class="nav-btn active" data-category="movie">Movie</button>
+                <button class="nav-btn" data-category="series">Series</button>
+                <button class="nav-btn" data-category="originals">Originals</button>
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">8</span>
+                </div>
+                <div class="profile">
+                    <img src="/placeholder.svg?height=32&width=32" alt="Sarah J" class="profile-img">
+                    <div class="profile-info">
+                        <span class="profile-name">Sarah J</span>
+                        <span class="profile-tier">Premium</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured Content -->
+        <section class="featured-content">
+            <div class="featured-card blue-sword">
+                <div class="featured-info">
+                    <h2>The Adventure of Blue Sword</h2>
+                    <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                        Let Play Moview
+                    </button>
+                </div>
+            </div>
+            
+            <div class="featured-card si-dol">
+                <div class="featured-info">
+                    <h2>Recalling the journey of Dol's exciting story</h2>
+                    <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                        Let Play Moview
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="category-filter">
+            <button class="category-btn" data-filter="trending">
+                <i class="fas fa-fire"></i>
+                Trending
+            </button>
+            <button class="category-btn" data-filter="action">
+                <i class="fas fa-bolt"></i>
+                Action
+            </button>
+            <button class="category-btn" data-filter="romance">
+                <i class="fas fa-heart"></i>
+                Romance
+            </button>
+            <button class="category-btn active" data-filter="animation">
+                <i class="fas fa-magic"></i>
+                Animation
+            </button>
+            <button class="category-btn" data-filter="horror">
+                <i class="fas fa-ghost"></i>
+                Horror
+            </button>
+            <button class="category-btn" data-filter="special">
+                <i class="fas fa-star"></i>
+                Special
+            </button>
+            <button class="category-btn" data-filter="drakor">
+                <i class="fas fa-globe-asia"></i>
+                Drakor
+            </button>
+        </section>
+
+        <!-- Trending Section -->
+        <section class="trending-section">
+            <div class="section-header">
+                <h3>Trending in Animation</h3>
+                <div class="section-controls">
+                    <button class="control-btn">
+                        <i class="fas fa-sliders-h"></i>
+                    </button>
+                    <button class="control-btn">
+                        <i class="fas fa-sort"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="movies-grid">
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="/placeholder.svg?height=300&width=200" alt="Loetoeng Kasarung">
+                    </div>
+                    <div class="movie-info">
+                        <h4>Loetoeng Kasarung</h4>
+                        <div class="movie-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                7.8
+                            </span>
+                            <span class="year">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="/placeholder.svg?height=300&width=200" alt="Gajah Langka">
+                    </div>
+                    <div class="movie-info">
+                        <h4>Gajah Langka</h4>
+                        <div class="movie-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                6.0
+                            </span>
+                            <span class="year">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="/placeholder.svg?height=300&width=200" alt="Si Kang Satay">
+                    </div>
+                    <div class="movie-info">
+                        <h4>Si Kang Satay</h4>
+                        <div class="movie-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                7.1
+                            </span>
+                            <span class="year">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="/placeholder.svg?height=300&width=200" alt="Mommy Cat">
+                    </div>
+                    <div class="movie-info">
+                        <h4>Mommy Cat</h4>
+                        <div class="movie-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                7.8
+                            </span>
+                            <span class="year">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="/placeholder.svg?height=300&width=200" alt="Hijaber Cantiq">
+                    </div>
+                    <div class="movie-info">
+                        <h4>Hijaber Cantiq</h4>
+                        <div class="movie-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                6.1
+                            </span>
+                            <span class="year">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="/placeholder.svg?height=300&width=200" alt="Xatra- X">
+                    </div>
+                    <div class="movie-info">
+                        <h4>Xatra- X</h4>
+                        <div class="movie-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                6.5
+                            </span>
+                            <span class="year">2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

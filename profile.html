@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flix.id - Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>Flix.id</h1>
+            </div>
+            
+            <nav class="nav-center">
+                <button class="nav-btn" data-category="movie">Movie</button>
+                <button class="nav-btn" data-category="series">Series</button>
+                <button class="nav-btn" data-category="originals">Originals</button>
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">8</span>
+                </div>
+                <div class="profile active">
+                    <img src="/placeholder.svg?height=32&width=32" alt="Sarah J" class="profile-img">
+                    <div class="profile-info">
+                        <span class="profile-name">Sarah J</span>
+                        <span class="profile-tier">Premium</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-cover">
+                    <div class="profile-avatar">
+                        <img src="/placeholder.svg?height=120&width=120" alt="Sarah J">
+                        <button class="edit-avatar">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="profile-details">
+                    <div class="profile-name-section">
+                        <h2>Sarah Johnson</h2>
+                        <span class="username">@sarahj</span>
+                    </div>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">42</span>
+                            <span class="stat-label">Watchlist</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">128</span>
+                            <span class="stat-label">Watched</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Premium</span>
+                            <span class="stat-label">Membership</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-actions">
+                        <button class="profile-btn primary">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </button>
+                        <button class="profile-btn">
+                            <i class="fas fa-cog"></i>
+                            Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile Navigation -->
+            <div class="profile-nav">
+                <button class="profile-nav-btn active" data-tab="watchlist">
+                    <i class="fas fa-bookmark"></i>
+                    Watchlist
+                </button>
+                <button class="profile-nav-btn" data-tab="history">
+                    <i class="fas fa-history"></i>
+                    Watch History
+                </button>
+                <button class="profile-nav-btn" data-tab="favorites">
+                    <i class="fas fa-heart"></i>
+                    Favorites
+                </button>
+                <button class="profile-nav-btn" data-tab="reviews">
+                    <i class="fas fa-star"></i>
+                    Reviews
+                </button>
+                <button class="profile-nav-btn" data-tab="settings">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </button>
+            </div>
+            
+            <!-- Profile Tab Content -->
+            <div class="profile-tab-content">
+                <!-- Watchlist Tab -->
+                <div class="tab-pane active" id="watchlist">
+                    <div class="tab-header">
+                        <h3>My Watchlist</h3>
+                        <div class="tab-actions">
+                            <button class="tab-action-btn">
+                                <i class="fas fa-sort"></i>
+                                Sort
+                            </button>
+                            <button class="tab-action-btn">
+                                <i class="fas fa-filter"></i>
+                                Filter
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="watchlist-grid">
+                        <div class="watchlist-item">
+                            <div class="watchlist-poster">
+                                <img src="/placeholder.svg?height=300&width=200" alt="The Adventure of Blue Sword">
+                                <div class="watchlist-overlay">
+                                    <button class="overlay-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                                <div class="watchlist-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled" style="width: 65%;"></div>
+                                    </div>
+                                    <span class="progress-text">65%</span>
+                                </div>
+                            </div>
+                            <div class="watchlist-info">
+                                <h4>The Adventure of Blue Sword</h4>
+                                <div class="watchlist-meta">
+                                    <span class="rating">
+                                        <i class="fas fa-star"></i>
+                                        8.2
+                                    </span>
+                                    <span class="year">2023</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="watchlist-item">
+                            <div class="watchlist-poster">
+                                <img src="/placeholder.svg?height=300&width=200" alt="Si Dol">
+                                <div class="watchlist-overlay">
+                                    <button class="overlay-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                                <div class="watchlist-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled" style="width: 30%;"></div>
+                                    </div>
+                                    <span class="progress-text">30%</span>
+                                </div>
+                            </div>
+                            <div class="watchlist-info">
+                                <h4>Si Dol</h4>
+                                <div class="watchlist-meta">
+                                    <span class="rating">
+                                        <i class="fas fa-star"></i>
+                                        7.5
+                                    </span>
+                                    <span class="year">2023</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="watchlist-item">
+                            <div class="watchlist-poster">
+                                <img src="/placeholder.svg?height=300&width=200" alt="Loetoeng Kasarung">
+                                <div class="watchlist-overlay">
+                                    <button class="overlay-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                                <div class="watchlist-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled" style="width: 0%;"></div>
+                                    </div>
+                                    <span class="progress-text">Not started</span>
+                                </div>
+                            </div>
+                            <div class="watchlist-info">
+                                <h4>Loetoeng Kasarung</h4>
+                                <div class="watchlist-meta">
+                                    <span class="rating">
+                                        <i class="fas fa-star"></i>
+                                        7.8
+                                    </span>
+                                    <span class="year">2023</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="watchlist-item">
+                            <div class="watchlist-poster">
+                                <img src="/placeholder.svg?height=300&width=200" alt="Mommy Cat">
+                                <div class="watchlist-overlay">
+                                    <button class="overlay-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                                <div class="watchlist-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled" style="width: 100%;"></div>
+                                    </div>
+                                    <span class="progress-text">Completed</span>
+                                </div>
+                            </div>
+                            <div class="watchlist-info">
+                                <h4>Mommy Cat</h4>
+                                <div class="watchlist-meta">
+                                    <span class="rating">
+                                        <i class="fas fa-star"></i>
+                                        7.8
+                                    </span>
+                                    <span class="year">2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Subscription Info -->
+        <div class="subscription-info">
+            <div class="subscription-header">
+                <h3>Your Subscription</h3>
+                <button class="upgrade-btn">Upgrade Plan</button>
+            </div>
+            
+            <div class="subscription-details">
+                <div class="subscription-plan">
+                    <div class="plan-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="plan-info">
+                        <h4>Premium Plan</h4>
+                        <p>Your subscription renews on <strong>June 15, 2025</strong></p>
+                    </div>
+                </div>
+                
+                <div class="subscription-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>4K Ultra HD</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Watch on 4 devices</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Ad-free experience</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Download for offline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

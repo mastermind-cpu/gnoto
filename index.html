@@ -3,213 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flix.id - Streaming Platform</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Invase - Flower Vase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #f8f8f8;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: #666;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Page Content */
+        .page {
+            display: none;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Home Page */
+        .home-page {
+            position: relative;
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .main-title {
+            font-size: 120px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .flower-container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flower-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: #333;
+            cursor: pointer;
+        }
+
+        .nav-arrow.left {
+            left: -100px;
+        }
+
+        .nav-arrow.right {
+            right: -100px;
+        }
+
+        .nav-arrow::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-top: 2px solid #333;
+            border-right: 2px solid #333;
+        }
+
+        .nav-arrow.left::after {
+            right: -2px;
+            top: -6px;
+            transform: rotate(-135deg);
+        }
+
+        .nav-arrow.right::after {
+            right: -8px;
+            top: -6px;
+            transform: rotate(45deg);
+        }
+
+        /* Side Text */
+        .side-text {
+            position: absolute;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .side-text.left {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .side-text.right {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Content Pages */
+        .content-page {
+            padding: 60px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-page h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .content-page h2 {
+            font-size: 24px;
+            color: #333;
+            margin: 30px 0 15px 0;
+        }
+
+        .content-page p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .procedure-step {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .contact-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 60px;
+                letter-spacing: 4px;
+            }
+
+            .flower-container {
+                width: 400px;
+                height: 300px;
+            }
+
+            .nav-arrow.left {
+                left: -50px;
+            }
+
+            .nav-arrow.right {
+                right: -50px;
+            }
+
+            .header {
+                padding: 15px 20px;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="logo">
-                <h1>Flix.id</h1>
-            </div>
-            
-            <nav class="nav-center">
-                <button class="nav-btn active" data-category="movie">Movie</button>
-                <button class="nav-btn" data-category="series">Series</button>
-                <button class="nav-btn" data-category="originals">Originals</button>
-                <button class="search-btn">
-                    <i class="fas fa-search"></i>
-                </button>
+            <div class="logo">KEVIN</div>
+            <nav class="nav">
+                <a href="#" onclick="showPage('home')" class="nav-link active">Home</a>
+                <a href="#" onclick="showPage('procedure')" class="nav-link">Procedure</a>
+                <a href="#" onclick="showPage('about')" class="nav-link">About</a>
+                <a href="#" onclick="showPage('contact')" class="nav-link">contact</a>
             </nav>
-            
-            <div class="user-profile">
-                <div class="notification">
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-badge">8</span>
-                </div>
-                <div class="profile">
-                    <img src="/placeholder.svg?height=32&width=32" alt="Sarah J" class="profile-img">
-                    <div class="profile-info">
-                        <span class="profile-name">Sarah J</span>
-                        <span class="profile-tier">Premium</span>
-                    </div>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
+            <div class="header-right">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
             </div>
         </header>
 
-        <!-- Featured Content -->
-        <section class="featured-content">
-            <div class="featured-card blue-sword">
-                <div class="featured-info">
-                    <h2>The Adventure of Blue Sword</h2>
-                    <button class="play-btn">
-                        <i class="fas fa-play"></i>
-                        Let Play Moview
-                    </button>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="home-page">
+                <h1 class="main-title">FLOWER VESSEL</h1>
+                <div class="flower-container">
+                    <img src="" alt="Flower Vases" class="flower-image">
+                    <div class="nav-arrow left"></div>
+                    <div class="nav-arrow right"></div>
                 </div>
+                <div class="side-text left">wickedkevin@gmail.com • +256 785673458</div>
             </div>
-            
-            <div class="featured-card si-dol">
-                <div class="featured-info">
-                    <h2>Recalling the journey of Dol's exciting story</h2>
-                    <button class="play-btn">
-                        <i class="fas fa-play"></i>
-                        Let Play Moview
-                    </button>
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <!-- Category Filter -->
-        <section class="category-filter">
-            <button class="category-btn" data-filter="trending">
-                <i class="fas fa-fire"></i>
-                Trending
-            </button>
-            <button class="category-btn" data-filter="action">
-                <i class="fas fa-bolt"></i>
-                Action
-            </button>
-            <button class="category-btn" data-filter="romance">
-                <i class="fas fa-heart"></i>
-                Romance
-            </button>
-            <button class="category-btn active" data-filter="animation">
-                <i class="fas fa-magic"></i>
-                Animation
-            </button>
-            <button class="category-btn" data-filter="horror">
-                <i class="fas fa-ghost"></i>
-                Horror
-            </button>
-            <button class="category-btn" data-filter="special">
-                <i class="fas fa-star"></i>
-                Special
-            </button>
-            <button class="category-btn" data-filter="drakor">
-                <i class="fas fa-globe-asia"></i>
-                Drakor
-            </button>
-        </section>
+        <!-- Procedure Page -->
+        <div id="procedure" class="page">
+            <div class="content-page">
+                <h1>Our Procedure</h1>
+                <p> I went undertook several procedures to come up with the flower vessel.</p>
+                
+                <div class="procedure-step">
+                    <h2>1. Collecting bottle tops</h2>
+                    <p> I took 2 days collecting plastic bottles from homes,neighbours and the community. </p>
+                </div>
 
-        <!-- Trending Section -->
-        <section class="trending-section">
-            <div class="section-header">
-                <h3>Trending in Animation</h3>
-                <div class="section-controls">
-                    <button class="control-btn">
-                        <i class="fas fa-sliders-h"></i>
-                    </button>
-                    <button class="control-btn">
-                        <i class="fas fa-sort"></i>
-                    </button>
+                <div class="procedure-step">
+                    <h2>2. Cleaning</h2>
+                    <p> I washed the plastic bottle because they were very dirty since they were rubbish. I let them dry and they were ready for use.</p>
+                </div>
+
+                <div class="procedure-step">
+                    <h2>3. Cutting and designing</h2>
+                    <p>I cut the [lastic bottles into the shapes you're seeing to give them the best look out of my hands.</p>
+                </div>
+
+                <div class="procedure-step">
+                    <h2>4. Aligning the materials</h2>
+                    <p>I collected loam soil and bought the flowers. I put the flower and the loam soil in the flower vessels. Finally I added water and fertilizers for proper growth.</p>
+                </div>
+
+                <div class="procedure-step">
+                    <h2>5. Placing in the desired place.</h2>
+                    <p>After 3-4 days the flower vessels are put in the desired place for decoration.</p>
                 </div>
             </div>
-            
-            <div class="movies-grid">
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="/placeholder.svg?height=300&width=200" alt="Loetoeng Kasarung">
-                    </div>
-                    <div class="movie-info">
-                        <h4>Loetoeng Kasarung</h4>
-                        <div class="movie-meta">
-                            <span class="rating">
-                                <i class="fas fa-star"></i>
-                                7.8
-                            </span>
-                            <span class="year">2023</span>
-                        </div>
-                    </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="content-page">
+                <h1>Contact Us</h1>
+                <p>I'd love to hear from you. Get in touch with me for any inquiries about our flower vessels or custom orders.</p>
+
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <p>wickedkevin@gmail.com</p>
                 </div>
-                
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="/placeholder.svg?height=300&width=200" alt="Gajah Langka">
-                    </div>
-                    <div class="movie-info">
-                        <h4>Gajah Langka</h4>
-                        <div class="movie-meta">
-                            <span class="rating">
-                                <i class="fas fa-star"></i>
-                                6.0
-                            </span>
-                            <span class="year">2023</span>
-                        </div>
-                    </div>
+
+                <div class="contact-info">
+                    <h3>Phone</h3>
+                    <p>+256 789576594</p>
                 </div>
-                
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="/placeholder.svg?height=300&width=200" alt="Si Kang Satay">
-                    </div>
-                    <div class="movie-info">
-                        <h4>Si Kang Satay</h4>
-                        <div class="movie-meta">
-                            <span class="rating">
-                                <i class="fas fa-star"></i>
-                                7.1
-                            </span>
-                            <span class="year">2023</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="/placeholder.svg?height=300&width=200" alt="Mommy Cat">
-                    </div>
-                    <div class="movie-info">
-                        <h4>Mommy Cat</h4>
-                        <div class="movie-meta">
-                            <span class="rating">
-                                <i class="fas fa-star"></i>
-                                7.8
-                            </span>
-                            <span class="year">2023</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="/placeholder.svg?height=300&width=200" alt="Hijaber Cantiq">
-                    </div>
-                    <div class="movie-info">
-                        <h4>Hijaber Cantiq</h4>
-                        <div class="movie-meta">
-                            <span class="rating">
-                                <i class="fas fa-star"></i>
-                                6.1
-                            </span>
-                            <span class="year">2023</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="/placeholder.svg?height=300&width=200" alt="Xatra- X">
-                    </div>
-                    <div class="movie-info">
-                        <h4>Xatra- X</h4>
-                        <div class="movie-meta">
-                            <span class="rating">
-                                <i class="fas fa-star"></i>
-                                6.5
-                            </span>
-                            <span class="year">2022</span>
-                        </div>
-                    </div>
+
+                <div class="contact-info">
+                    <h3>Custom Orders</h3>
+                    <p>Interested in a my vessel design? Contact me to discuss your specific requirements. I offer personalized designs for special occasions and unique spaces.</p>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <div class="content-page">
+                <h1>About me</h1>
+                <p>Invase is a premium flower vase company dedicated to creating beautiful, functional pieces that enhance any space. Our passion for design and craftsmanship drives us to produce vases that are not just containers, but works of art.</p>
+
+                <h2>My Story</h2>
+                <p>Founded with a vision to bring elegance and simplicity to home décor, Invase has been creating exceptional flower vases for discerning customers who appreciate quality and design. Each piece in our collection reflects our commitment to excellence and attention to detail.</p>
+
+                <h2>My Mission</h2>
+                <p>To create timeless, elegant vases that celebrate the natural beauty of flowers while adding sophistication to any environment. We believe that the right vase can transform not just flowers, but entire spaces.</p>
+
+                <h2>Quality Commitment</h2>
+                <p>Every Invase product is crafted with the highest quality materials and attention to detail. We stand behind our products and are committed to customer satisfaction. Our vases are designed to last and to bring joy for years to come.</p>
+
+                <h2>Sustainability</h2>
+                <p>We are committed to sustainable practices in our manufacturing process. We use eco-friendly materials whenever possible and work to minimize our environmental impact while maintaining the highest quality standards.</p>
+            </div>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Add click handlers for navigation arrows
+        document.addEventListener('DOMContentLoaded', function() {
+            const leftArrow = document.querySelector('.nav-arrow.left');
+            const rightArrow = document.querySelector('.nav-arrow.right');
+
+            leftArrow.addEventListener('click', function() {
+                // Add your left arrow functionality here
+                console.log('Left arrow clicked');
+            });
+
+            rightArrow.addEventListener('click', function() {
+                // Add your right arrow functionality here
+                console.log('Right arrow clicked');
+            });
+        });
+    </script>
 </body>
 </html>

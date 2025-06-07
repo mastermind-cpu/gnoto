@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Notice Board</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #2e86de;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #1b4f72;
+}
+
+.notice {
+  background-color: #e9f7ef;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #27ae60;
+  position: relative;
+  border-radius: 5px;
+}
+
+.notice .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>School Notice Board</h1>
+
+    <form id="noticeForm">
+      <textarea id="noticeText" placeholder="Enter notice here..." required></textarea>
+      <button type="submit">Post Notice</button>
+    </form>
+
+    <div id="noticeList"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const noticeForm = document.getElementById('noticeForm');
+  const noticeText = document.getElementById('noticeText');
+  const noticeList = document.getElementById('noticeList');
+
+  // Load from localStorage
+  const notices = JSON.parse(localStorage.getItem('notices')) || [];
+
+  function renderNotices() {
+    noticeList.innerHTML = '';
+    notices.forEach((notice, index) => {
+      const noticeDiv = document.createElement('div');
+      noticeDiv.className = 'notice';
+      noticeDiv.innerHTML = `
+        ${notice}
+        <button class="delete-btn" data-index="${index}">&times;</button>
+      `;
+      noticeList.appendChild(noticeDiv);
+    });
+  }
+
+  noticeForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = noticeText.value.trim();
+    if (text) {
+      notices.unshift(text);
+      localStorage.setItem('notices', JSON.stringify(notices));
+      noticeText.value = '';
+      renderNotices();
+    }
+  });
+
+  noticeList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-btn')) {
+      const index = e.target.getAttribute('data-index');
+      notices.splice(index, 1);
+      localStorage.setItem('notices', JSON.stringify(notices));
+      renderNotices();
+    }
+  });
+
+  renderNotices();
+});
+
+  </script>
+</body>
+</html>
